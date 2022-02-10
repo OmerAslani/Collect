@@ -1,0 +1,133 @@
+@media only screen and (min-width: 455px) {
+    /* * {
+        margin: 0;
+        padding: 0;
+    } */
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+    #big__container {
+        margin: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #main__container {
+        display: flex;
+    }
+    .card {
+        display: grid;
+        grid-template-columns: 350px;
+        grid-template-rows: 330px 261px 120px;
+        grid-template-areas: "image" "text" "info";
+        border-radius: 20px;
+        background: white;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+        text-align: center;
+        margin: 15px;
+    }
+    .card-text {
+        grid-area: text;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .card-info {
+        grid-area: info;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-evenly;
+    }
+    .marg {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .btn {
+        width: 85px;
+        height: 35px;
+        background-color: rgb(76, 199, 96);
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        color: white;
+        transition: 0.5s 0s all ease;
+    }
+    .btn:hover {
+        width: 95px;
+        height: 40px;
+        transition: width 0.5s, height 0.5s;
+    }
+    a {
+        text-decoration: none;
+    }
+    #card-img {
+        grid-area: image;
+        background-image: url("https://images-na.ssl-images-amazon.com/images/I/712mcllwbFL._RI_.jpg");
+        background-size: cover;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    #card-img2 {
+        grid-area: image;
+        background-image: url("https://i.pinimg.com/originals/7c/e1/fd/7ce1fd62a19764bcd8aa4b6da674536f.jpg");
+        background-size: cover;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    #card-img3 {
+        grid-area: image;
+        background-image: url("https://miro.medium.com/max/548/1*Y8vXN1mJeEHyXWJtFICjiQ.jpeg");
+        background-size: cover;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    #card-img4 {
+        grid-area: image;
+        background-image: url("https://pics.filmaffinity.com/nebeska_udica-551519494-large.jpg");
+        background-size: cover;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    #card-img5 {
+        grid-area: image;
+        background-image: url("https://m.media-amazon.com/images/M/MV5BZWZkNjVhZDEtZTNkZi00OWIxLTk3N2UtNjBkMjgzZGMwMDI2XkEyXkFqcGdeQXVyMTAyOTE2ODg0._V1_.jpg");
+        background-size: cover;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    p {
+        font-family: sans-serif;
+    }
+    #me {
+        background-image: url("https://scontent.fbru2-1.fna.fbcdn.net/v/t31.18172-8/13958117_1406832209331856_2866622260963214447_o.jpg?_nc_cat=110&ccb=1-5&_nc_sid=e3f864&_nc_ohc=mK5T7_1aUToAX_xEFpI&_nc_ht=scontent.fbru2-1.fna&oh=00_AT_051ERIG-tFUm_3TWcZSkHaB4hjQ-M0-51Qd4lyrJO7Q&oe=6228570A");
+        width: 450px;
+        height: 300px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+    }
+    #myBest {
+        font-size: xx-large;
+    }
+    .img:hover {
+        transform: scale(1.2);
+    }
+    #list1,
+    #list2,
+    #list3,
+    #list4 {
+        display: none;
+        text-align: left;
+    }
+    h4:hover {
+        cursor: pointer;
+        font-size: large;
+        color: blue;
+    }
+}

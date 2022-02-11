@@ -8,6 +8,7 @@
         padding: 0;
         width: 100vw;
         height: 100vh;
+        background-color: #2A2B2E;
     }
     #big__container {
         margin: 50px;
@@ -17,6 +18,9 @@
     }
     #main__container {
         display: flex;
+        align-items: center;
+        min-height: 900px;
+        flex-wrap: wrap;
     }
     .card {
         display: grid;
@@ -40,6 +44,7 @@
         flex-direction: row;
         align-items: flex-end;
         justify-content: space-evenly;
+        padding-bottom: 10px;
     }
     .marg {
         margin-left: 10px;

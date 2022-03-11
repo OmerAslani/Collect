@@ -1,5 +1,6 @@
 // const { doc } = require("prettier");
 
+
 // COLLECTION = [{
 
 //         Director: 'Kang Je-Gyu',
@@ -10,6 +11,21 @@
 //         Runtime: '145 min.',
 //         Language: 'Korean',
 //         img: "https://images-na.ssl-images-amazon.com/images/I/712mcllwbFL._RI_.jpg"
+
+
+// const { doc } = require("prettier");
+
+// COLLECTION = [{
+
+//         Director: 'Kang Je-Gyu',
+//         Writer: ' Kang Je-Gyu, Na Hyun, Kim Byung-In, Song Min-Gyu',
+//         Producer: 'Kang Je-Gyu, Jo Sung-Jin, Choi Jin-Hwa, Song Min-Gyu',
+//         ReleaseDate: 'December 21, 2011 (South Korea) / January 14, 2012 (Japan)',
+//         Genre: 'War / Action / Period-1940 / Award Winning',
+//         Runtime: '145 min.',
+//         Language: 'Korean',
+//         img: "https://images-na.ssl-images-amazon.com/images/I/712mcllwbFL._RI_.jpg"
+
 
 //     },
 //     {
@@ -78,13 +94,102 @@ const slumB = document.querySelector('#slumDog');
 const myB = document.querySelector('#myWay');
 const purB = document.querySelector('#pursuitB');
 
-var h4 = document.querySelectorAll('h4');
+var title = document.querySelector('h4');
+let serchInput = document.getElementById("serch-1");
+let dugme = document.getElementById('dugme');
+
+dugme.addEventListener('click', onSearch);
 
 
-fetch("https://www.omdbapi.com/?s=harry+potter&apikey=9ef64a19")
-    .then(res => res.json())
-    .then(data => console.log(data.Search[0].Title))
+function onSearch(element) {
+    const nesto = document.getElementById('main__container')
+    var child = nesto.lastElementChild;
+    while (child) {
+        nesto.removeChild(child);
+        child = nesto.lastElementChild;
+    }
+    getMovie(serchInput.value)
+}
 
+function _processResponseFromOmdbAPI(data) {
+    data.Search.forEach(movie => {
+        // console.log(movie);
+        const h1 = document.querySelector('.text')
+        const card = document.querySelector('#main__container')
+        card.insertAdjacentHTML("beforeend", `<div id="my" class="card">
+        <div id="card-img" class="img"> <img src="${movie.Poster}" alt="nesto" class="slika"> </div>
+        <div class="text">
+            <h1>${movie.Title}</h1>
+            <div id="myWay">
+                <h4>${movie.Year}</h4>
+                <ul id="list1">
+
+                    <li> <b>Director :</b> Kang Je-Gyu</li>
+                    <li> <b>Writer :</b> Kang Je-Gyu, Na Hyun, Kim Byung-In, Song Min-Gyu</li>
+                    <li> <b>Producer :</b> Kang Je-Gyu, Jo Sung-Jin, Choi Jin-Hwa, Song Min-Gyu</li>
+                    <li> <b>Release Date :</b> December 21, 2011 (South Korea) / January 14, 2012 (Japan)</li>
+                    <li> <b>Genre :</b> War / Action / Period-1940 / Award Winning</li>
+                    <li> <b>Runtime :</b> 145 min.</li>
+                    <li> <b>Language : </b> Korean </li>
+                </ul>
+            </div>
+
+            <p class="marg">This film is based on the story of a Korean named Yang Kyoungjong who was allegedly captured by the Americans on D-Day. Yang Kyoungjong was conscripted into the Japanese Imperial Army, the Red Army, and the Wehrmacht.</p>
+        </div>
+
+
+        <div class="card-info">
+            <a href="https://www.youtube.com/watch?v=alx6XKgTb54" target="_blank">
+                <div class="btn">Trailer</div>
+            </a>
+            <a href="https://drama.cx/watch-my-way-mai-wei/full-sub-sv1.html" target="_blank">
+                <div class="btn">Watch</div>
+            </a>
+            <a href="https://www.imdb.com/title/tt1606384/?ref_=nv_sr_srsg_7" target="_blank">
+                <div class="btn">IMDb</div>
+            </a>
+        </div>
+    </div>
+`)
+
+    });
+}
+
+
+
+// function replace2(rec, slovo1, slovo2) {
+//     let result = '';
+//     rec.split('').forEach(letter => {
+//         if (letter === slovo1) {
+//             result += slovo2;
+//         } else {
+
+//             result += letter;
+//         }
+//     });
+//     return (result);
+// }
+
+function getMovie(search) {
+
+    fetch(`https://www.omdbapi.com/?s=${search.replace(" ","+")}&apikey=9ef64a19`)
+        .then(response => response.json())
+        .then(_processResponseFromOmdbAPI)
+
+
+
+}
+
+console.log(replace2("nesto", "s", "k"));
+
+
+getMovie("harry potter")
+
+// function showMovi(data) {
+//     data.forEach(movie => {
+//         console.log(movie);
+//     });
+// }
 
 
 
@@ -137,4 +242,15 @@ fetch("https://www.omdbapi.com/?s=harry+potter&apikey=9ef64a19")
 //         list3.style.display = 'none';
 //         purD.style.gridTemplateRows = '330px 260px 120px';
 //     }
-// })
+
+
+
+function f1(funkcijaKaoParametar) {
+    funkcijaKaoParametar()
+}
+
+function sabiranje() {
+    console.log(2 + 5);
+}
+
+f1(sabiranje)

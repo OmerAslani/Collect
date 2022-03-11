@@ -71,9 +71,14 @@
     a {
         text-decoration: none;
     }
+    .slika {
+        max-height: 100%;
+        min-width: 100%;
+    }
     #card-img {
+        max-width: 100%;
         grid-area: image;
-        background-image: url("https://images-na.ssl-images-amazon.com/images/I/712mcllwbFL._RI_.jpg");
+        /* background-image: url("https://images-na.ssl-images-amazon.com/images/I/712mcllwbFL._RI_.jpg"); */
         background-size: cover;
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
@@ -136,3 +141,5 @@
         color: blue;
     }
 }
+
+#serch-1 {}
